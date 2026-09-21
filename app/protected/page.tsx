@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { AddLeadModal, AddPropertyModal } from "@/components/dashboard/action-modals";
 
+export const dynamic = "force-dynamic";
+
 export interface Property {
   id: string;
   title: string;
