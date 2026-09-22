@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { connection } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import {
   Users,
@@ -15,8 +16,6 @@ import {
   Briefcase,
 } from "lucide-react";
 import { AddLeadModal, AddPropertyModal } from "@/components/dashboard/action-modals";
-
-export const dynamic = "force-dynamic";
 
 export interface Property {
   id: string;
@@ -122,6 +121,7 @@ function getPropertyStatusBadge(status: string) {
 }
 
 export default async function ProtectedDashboardPage() {
+  await connection();
   const supabase = await createClient();
 
   // 1. Validar autenticación de usuario
@@ -297,7 +297,6 @@ export default async function ProtectedDashboardPage() {
         </div>
 
         {leads.length === 0 ? (
-          /* Empty State para Leads */
           <div className="flex flex-col items-center justify-center p-10 text-center rounded-2xl bg-zinc-900/40 border border-dashed border-zinc-800 hover:border-zinc-700 transition-colors">
             <div className="p-3.5 rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-3 shadow-inner">
               <Users className="w-7 h-7" />
@@ -314,7 +313,6 @@ export default async function ProtectedDashboardPage() {
             />
           </div>
         ) : (
-          /* Tabla / Tarjetas de Leads */
           <div className="overflow-hidden rounded-2xl bg-zinc-900/70 border border-zinc-800 shadow-sm">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs text-zinc-300">
@@ -404,7 +402,6 @@ export default async function ProtectedDashboardPage() {
         </div>
 
         {properties.length === 0 ? (
-          /* Empty State para Propiedades */
           <div className="flex flex-col items-center justify-center p-10 text-center rounded-2xl bg-zinc-900/40 border border-dashed border-zinc-800 hover:border-zinc-700 transition-colors">
             <div className="p-3.5 rounded-2xl bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-3 shadow-inner">
               <Building2 className="w-7 h-7" />
@@ -421,7 +418,6 @@ export default async function ProtectedDashboardPage() {
             />
           </div>
         ) : (
-          /* Cuadrícula de Propiedades */
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {properties.map((property) => (
               <div
