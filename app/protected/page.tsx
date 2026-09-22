@@ -6,11 +6,9 @@ import {
   CheckCircle2,
   TrendingUp,
   MapPin,
-  DollarSign,
   MessageCircle,
   ExternalLink,
   Sparkles,
-  Phone,
   Database,
   Briefcase,
 } from "lucide-react";
