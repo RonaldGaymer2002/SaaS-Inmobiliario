@@ -1,109 +1,171 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+# 🏢 SaaS Inmobiliario — CRM & Gestión de Propiedades
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-Database%20%26%20Auth-3ecf8e?style=flat-square&logo=supabase)](https://supabase.com/)
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+Plataforma web integral orientada a agentes y agencias de bienes raíces. Permite centralizar la administración del inventario de inmuebles, realizar seguimiento activo del embudo comercial (CRM de prospectos/leads) y acelerar el cierre de ventas mediante integraciones directas con WhatsApp en un entorno seguro y de alto rendimiento.
 
-## Features
+---
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Proxy
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Password-based authentication block installed via the [Supabase UI Library](https://supabase.com/ui/docs/nextjs/password-based-auth)
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+## 👨‍💻 Desarrollador del Proyecto
 
-## Demo
+* **Programador:** **Ronald Augusto Rodriguez Serrano**
+* **Repositorio:** [RonaldGaymer2002/SaaS-Inmobiliario](https://github.com/RonaldGaymer2002/SaaS-Inmobiliario)
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+---
 
-## Deploy to Vercel
+## 🚀 Funcionalidades Principales
 
-Vercel deployment will guide you through creating a Supabase account and project.
+### 1. Panel de Control y Métricas en Tiempo Real (KPIs)
+* **Total de Propiedades:** Contador de inmuebles activos en cartera.
+* **Prospectos Registrados:** Métrica consolidada de clientes potenciales.
+* **Tratos Cerrados:** Seguimiento de conversiones exitosas.
+* **Pipeline Estimado:** Cálculo dinámico del volumen monetario total de clientes en negociación o visitas activas.
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+### 2. CRM y Gestión de Leads
+* **Ciclo de Vida del Prospecto:** Clasificación por estados (`Nuevo`, `Contactado`, `Visita Agendada`, `Negociación`, `Cerrado`).
+* **Control Presupuestario:** Registro del presupuesto disponible por cada cliente.
+* **Integración con WhatsApp en 1 Clic:** Enlace dinámico que abre WhatsApp Web o móvil con un mensaje de presentación contextualizado con el nombre del cliente.
+* **Estados Vacíos Intuitivos:** Flujo guiado para registrar el primer prospecto cuando la base de datos está vacía.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+### 3. Catálogo e Inventario de Inmuebles
+* **Fichas Comerciales:** Título, ubicación geográfica, precio formateado en divisa y estado comercial (`Disponible`, `Reservado`, `Vendido`).
+* **Modales Interactivos:** Formularios optimizados para el alta de propiedades con validación en servidor.
+* **Tarjetas con Microinteracciones:** Diseño de interfaz moderna en modo oscuro con efectos sutiles de elevación y transiciones suaves.
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+### 4. Seguridad y Autenticación
+* **Sesiones Seguras vía SSR:** Implementación de `@supabase/ssr` con cookies seguras (Server Components, Server Actions y Middleware).
+* **Aislamiento Multi-usuario:** Cada agente o usuario gestiona exclusivamente sus propias propiedades y prospectos vinculados a su identificador único (`user_id`).
+* **Rutas Protegidas:** Redirección automática al inicio de sesión si no existe una sesión activa y válida.
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+---
 
-## Clone and run locally
+## 🛠️ Stack Tecnológico
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+| Capa | Tecnología | Descripción |
+| :--- | :--- | :--- |
+| **Framework Fullstack** | [Next.js 15](https://nextjs.org/) | App Router, Server Components y renderizado dinámico (`force-dynamic`). |
+| **Biblioteca de UI** | [React 19](https://react.dev/) | Primitivas y componentes reactivos modernos. |
+| **Lenguaje** | [TypeScript 5](https://www.typescriptlang.org/) | Tipado estático estricto para modelos de datos y Server Actions. |
+| **Estilos y Diseño** | [Tailwind CSS](https://tailwindcss.com/) | Sistema de diseño responsivo y estética moderna Dark Mode. |
+| **Componentes e Iconos**| [Lucide React](https://lucide.dev/) & [Radix UI](https://www.radix-ui.com/) | Iconografía nítida y accesibilidad nativa. |
+| **Base de Datos & Auth** | [Supabase](https://supabase.com/) | PostgreSQL gestionado, Row Level Security (RLS) y autenticación segura. |
+| **Backend Logic** | Next.js Server Actions | Mutaciones en servidor (`createPropertyAction`, `createLeadAction`) con `revalidatePath`. |
 
-2. Create a Next.js app using the Supabase Starter template npx command
+---
 
-   ```bash
-   npx create-next-app --example with-supabase with-supabase-app
-   ```
+## 📂 Estructura del Proyecto
 
-   ```bash
-   yarn create next-app --example with-supabase with-supabase-app
-   ```
+```text
+saas-inmobiliario/
+├── app/
+│   ├── layout.tsx                # Layout principal de la aplicación y temas
+│   ├── page.tsx                  # Landing page pública de bienvenida
+│   └── protected/
+│       ├── page.tsx              # Dashboard inmobiliario (KPIs, Leads, Inventario)
+│       ├── actions.ts            # Server Actions para inserción y validación de datos
+│       └── reset-password/       # Flujo de recuperación de contraseñas
+├── components/
+│   ├── auth-button.tsx           # Botón de autenticación e inicio/cierre de sesión
+│   ├── dashboard/
+│   │   └── action-modals.tsx     # Modales para añadir Propiedades y Leads
+│   └── ui/                       # Componentes base reutilizables
+├── lib/
+│   ├── supabase/
+│   │   ├── client.ts             # Cliente de Supabase para Client Components
+│   │   ├── server.ts             # Cliente de Supabase adaptado a cookies de servidor
+│   │   └── middleware.ts         # Verificación y actualización de sesión
+│   └── utils.ts                  # Utilidades auxiliares de formato y clases
+├── .env.example                  # Plantilla de variables de entorno requeridas
+└── README.md                     # Documentación general del sistema
+```
 
-   ```bash
-   pnpm create next-app --example with-supabase with-supabase-app
-   ```
+---
 
-3. Use `cd` to change into the app's directory
+## 🗄️ Esquema de Base de Datos (Supabase / PostgreSQL)
 
-   ```bash
-   cd with-supabase-app
-   ```
+Para inicializar la base de datos en tu proyecto de Supabase, ejecuta las siguientes sentencias SQL en el **SQL Editor**:
 
-4. Rename `.env.example` to `.env.local` and update the following:
+```sql
+-- Tabla de Propiedades
+create table if not exists public.properties (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users(id) on delete cascade not null,
+  title text not null,
+  location text not null,
+  price numeric(12, 2) not null default 0,
+  status text not null default 'disponible',
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
 
-  ```env
-  NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-  NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=[INSERT SUPABASE PROJECT API PUBLISHABLE OR ANON KEY]
-  ```
-  > [!NOTE]
-  > This example uses `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, which refers to Supabase's new **publishable** key format.
-  > Both legacy **anon** keys and new **publishable** keys can be used with this variable name during the transition period. Supabase's dashboard may show `NEXT_PUBLIC_SUPABASE_ANON_KEY`; its value can be used in this example.
-  > See the [full announcement](https://github.com/orgs/supabase/discussions/29260) for more information.
+-- Tabla de Prospectos (Leads)
+create table if not exists public.leads (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users(id) on delete cascade not null,
+  name text not null,
+  phone text not null,
+  budget numeric(12, 2) not null default 0,
+  status text not null default 'nuevo',
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
 
-  Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` can be found in [your Supabase project's API settings](https://supabase.com/dashboard/project/_?showConnect=true)
+-- Habilitar Row Level Security (RLS)
+alter table public.properties enable row level security;
+alter table public.leads enable row level security;
 
-5. You can now run the Next.js local development server:
+-- Políticas de acceso para Properties
+create policy "Usuarios gestionan sus propias propiedades"
+  on public.properties for all
+  using (auth.uid() = user_id)
+  with check (auth.uid() = user_id);
 
-   ```bash
-   npm run dev
-   ```
+-- Políticas de acceso para Leads
+create policy "Usuarios gestionan sus propios leads"
+  on public.leads for all
+  using (auth.uid() = user_id)
+  with check (auth.uid() = user_id);
+```
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+---
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+## ⚙️ Instalación y Puesta en Marcha Local
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+### 1. Prerrequisitos
+* [Node.js](https://nodejs.org/) v18.18+ o superior.
+* Gestor de paquetes `npm`, `pnpm` o `yarn`.
+* Cuenta activa en [Supabase](https://supabase.com/) con un proyecto creado.
 
-## Feedback and issues
+### 2. Clonar el repositorio
+```bash
+git clone https://github.com/RonaldGaymer2002/SaaS-Inmobiliario.git
+cd SaaS-Inmobiliario
+```
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+### 3. Instalar dependencias
+```bash
+npm install
+```
 
-## More Supabase examples
+### 4. Variables de Entorno
+Crea un archivo `.env.local` en la raíz del proyecto tomando como referencia `.env.example`:
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://tu-proyecto.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=tu-clave-anon-o-publishable
+```
+
+### 5. Iniciar el servidor de desarrollo
+```bash
+npm run dev
+```
+
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación en ejecución. Accede a la ruta `/protected` tras iniciar sesión para visualizar el panel de control.
+
+---
+
+## 📄 Licencia
+
+Este proyecto fue desarrollado por **Ronald Augusto Rodriguez Serrano** con fines profesionales y de gestión inmobiliaria.
