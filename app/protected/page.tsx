@@ -1,5 +1,4 @@
 import { redirect } from "next/navigation";
-import { connection } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import {
   Users,
@@ -16,6 +15,9 @@ import {
   Briefcase,
 } from "lucide-react";
 import { AddLeadModal, AddPropertyModal } from "@/components/dashboard/action-modals";
+
+// Permitir ruta bloqueante dinámica en Next.js 16 con cacheComponents
+export const instant = false;
 
 export interface Property {
   id: string;
@@ -121,7 +123,6 @@ function getPropertyStatusBadge(status: string) {
 }
 
 export default async function ProtectedDashboardPage() {
-  await connection();
   const supabase = await createClient();
 
   // 1. Validar autenticación de usuario
